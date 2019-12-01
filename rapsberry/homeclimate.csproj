@@ -1,0 +1,231 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\bkn_d_dark.png" />
+    <Content Include="Assets\bkn_d_light.png" />
+    <Content Include="Assets\bkn_d_line_dark.png" />
+    <Content Include="Assets\bkn_d_line_light.png" />
+    <Content Include="Assets\bkn_minus_ra_d_dark.png" />
+    <Content Include="Assets\bkn_minus_ra_d_light.png" />
+    <Content Include="Assets\bkn_minus_ra_d_line_dark.png" />
+    <Content Include="Assets\bkn_minus_ra_d_line_light.png" />
+    <Content Include="Assets\bkn_minus_ra_n_dark.png" />
+    <Content Include="Assets\bkn_minus_ra_n_light.png" />
+    <Content Include="Assets\bkn_minus_ra_n_line_dark.png" />
+    <Content Include="Assets\bkn_minus_ra_n_line_light.png" />
+    <Content Include="Assets\bkn_minus_sn_d_dark.png" />
+    <Content Include="Assets\bkn_minus_sn_d_light.png" />
+    <Content Include="Assets\bkn_minus_sn_d_line_dark.png" />
+    <Content Include="Assets\bkn_minus_sn_d_line_light.png" />
+    <Content Include="Assets\bkn_minus_sn_n_dark.png" />
+    <Content Include="Assets\bkn_minus_sn_n_light.png" />
+    <Content Include="Assets\bkn_minus_sn_n_line_dark.png" />
+    <Content Include="Assets\bkn_minus_sn_n_line_light.png" />
+    <Content Include="Assets\bkn_n_dark.png" />
+    <Content Include="Assets\bkn_n_light.png" />
+    <Content Include="Assets\bkn_n_line_dark.png" />
+    <Content Include="Assets\bkn_n_line_light.png" />
+    <Content Include="Assets\bkn_plus_ra_d_dark.png" />
+    <Content Include="Assets\bkn_plus_ra_d_light.png" />
+    <Content Include="Assets\bkn_plus_ra_d_line_dark.png" />
+    <Content Include="Assets\bkn_plus_ra_d_line_light.png" />
+    <Content Include="Assets\bkn_plus_ra_n_dark.png" />
+    <Content Include="Assets\bkn_plus_ra_n_light.png" />
+    <Content Include="Assets\bkn_plus_ra_n_line_dark.png" />
+    <Content Include="Assets\bkn_plus_ra_n_line_light.png" />
+    <Content Include="Assets\bkn_plus_sn_d_dark.png" />
+    <Content Include="Assets\bkn_plus_sn_d_light.png" />
+    <Content Include="Assets\bkn_plus_sn_d_line_dark.png" />
+    <Content Include="Assets\bkn_plus_sn_d_line_light.png" />
+    <Content Include="Assets\bkn_plus_sn_n_dark.png" />
+    <Content Include="Assets\bkn_plus_sn_n_light.png" />
+    <Content Include="Assets\bkn_plus_sn_n_line_dark.png" />
+    <Content Include="Assets\bkn_plus_sn_n_line_light.png" />
+    <Content Include="Assets\bkn_ra_d_dark.png" />
+    <Content Include="Assets\bkn_ra_d_light.png" />
+    <Content Include="Assets\bkn_ra_d_line_dark.png" />
+    <Content Include="Assets\bkn_ra_d_line_light.png" />
+    <Content Include="Assets\bkn_ra_n_dark.png" />
+    <Content Include="Assets\bkn_ra_n_light.png" />
+    <Content Include="Assets\bkn_ra_n_line_dark.png" />
+    <Content Include="Assets\bkn_ra_n_line_light.png" />
+    <Content Include="Assets\bkn_sn_d_dark.png" />
+    <Content Include="Assets\bkn_sn_d_light.png" />
+    <Content Include="Assets\bkn_sn_d_line_dark.png" />
+    <Content Include="Assets\bkn_sn_d_line_light.png" />
+    <Content Include="Assets\bkn_sn_n_dark.png" />
+    <Content Include="Assets\bkn_sn_n_light.png" />
+    <Content Include="Assets\bkn_sn_n_line_dark.png" />
+    <Content Include="Assets\bkn_sn_n_line_light.png" />
+    <Content Include="Assets\bl_dark.png" />
+    <Content Include="Assets\bl_light.png" />
+    <Content Include="Assets\bl_line_dark.png" />
+    <Content Include="Assets\bl_line_light.png" />
+    <Content Include="Assets\dst_dark.png" />
+    <Content Include="Assets\dst_light.png" />
+    <Content Include="Assets\dst_line_dark.png" />
+    <Content Include="Assets\dst_line_light.png" />
+    <Content Include="Assets\du_st_dark.png" />
+    <Content Include="Assets\du_st_light.png" />
+    <Content Include="Assets\du_st_line_dark.png" />
+    <Content Include="Assets\du_st_line_light.png" />
+    <Content Include="Assets\du_ts_dark.png" />
+    <Content Include="Assets\du_ts_light.png" />
+    <Content Include="Assets\du_ts_line_dark.png" />
+    <Content Include="Assets\du_ts_line_light.png" />
+    <Content Include="Assets\fct_minus_ra_dark.png" />
+    <Content Include="Assets\fct_minus_ra_light.png" />
+    <Content Include="Assets\fct_minus_ra_line_dark.png" />
+    <Content Include="Assets\fct_minus_ra_line_light.png" />
+    <Content Include="Assets\fct_minus_sn_dark.png" />
+    <Content Include="Assets\fct_minus_sn_light.png" />
+    <Content Include="Assets\fct_minus_sn_line_dark.png" />
+    <Content Include="Assets\fct_minus_sn_line_light.png" />
+    <Content Include="Assets\fct_plus_ra_dark.png" />
+    <Content Include="Assets\fct_plus_ra_light.png" />
+    <Content Include="Assets\fct_plus_ra_line_dark.png" />
+    <Content Include="Assets\fct_plus_ra_line_light.png" />
+    <Content Include="Assets\fct_plus_sn_dark.png" />
+    <Content Include="Assets\fct_plus_sn_light.png" />
+    <Content Include="Assets\fct_plus_sn_line_dark.png" />
+    <Content Include="Assets\fct_plus_sn_line_light.png" />
+    <Content Include="Assets\fct_ra_dark.png" />
+    <Content Include="Assets\fct_ra_light.png" />
+    <Content Include="Assets\fct_ra_line_dark.png" />
+    <Content Include="Assets\fct_ra_line_light.png" />
+    <Content Include="Assets\fct_ra_sn_dark.png" />
+    <Content Include="Assets\fct_ra_sn_light.png" />
+    <Content Include="Assets\fct_ra_sn_line_dark.png" />
+    <Content Include="Assets\fct_ra_sn_line_light.png" />
+    <Content Include="Assets\fct_sn_dark.png" />
+    <Content Include="Assets\fct_sn_dwn_dark.png" />
+    <Content Include="Assets\fct_sn_dwn_light.png" />
+    <Content Include="Assets\fct_sn_dwn_line_dark.png" />
+    <Content Include="Assets\fct_sn_dwn_line_light.png" />
+    <Content Include="Assets\fct_sn_light.png" />
+    <Content Include="Assets\fct_sn_line_dark.png" />
+    <Content Include="Assets\fct_sn_line_light.png" />
+    <Content Include="Assets\fct_sn_rs_dark.png" />
+    <Content Include="Assets\fct_sn_rs_light.png" />
+    <Content Include="Assets\fct_sn_rs_line_dark.png" />
+    <Content Include="Assets\fct_sn_rs_line_light.png" />
+    <Content Include="Assets\fct_ts_dark.png" />
+    <Content Include="Assets\fct_ts_light.png" />
+    <Content Include="Assets\fct_ts_line_dark.png" />
+    <Content Include="Assets\fct_ts_line_light.png" />
+    <Content Include="Assets\fct_ts_ra_dark.png" />
+    <Content Include="Assets\fct_ts_ra_light.png" />
+    <Content Include="Assets\fct_ts_ra_line_dark.png" />
+    <Content Include="Assets\fct_ts_ra_line_light.png" />
+    <Content Include="Assets\fg_d_dark.png" />
+    <Content Include="Assets\fg_d_light.png" />
+    <Content Include="Assets\fg_d_line_dark.png" />
+    <Content Include="Assets\fg_d_line_light.png" />
+    <Content Include="Assets\fg_n_dark.png" />
+    <Content Include="Assets\fg_n_light.png" />
+    <Content Include="Assets\fg_n_line_dark.png" />
+    <Content Include="Assets\fg_n_line_light.png" />
+    <Content Include="Assets\minus_bl_dark.png" />
+    <Content Include="Assets\minus_bl_light.png" />
+    <Content Include="Assets\minus_bl_line_dark.png" />
+    <Content Include="Assets\minus_bl_line_light.png" />
+    <Content Include="Assets\ovc_dark.png" />
+    <Content Include="Assets\ovc_ha_dark.png" />
+    <Content Include="Assets\ovc_ha_light.png" />
+    <Content Include="Assets\ovc_ha_line_dark.png" />
+    <Content Include="Assets\ovc_ha_line_light.png" />
+    <Content Include="Assets\ovc_light.png" />
+    <Content Include="Assets\ovc_line_dark.png" />
+    <Content Include="Assets\ovc_line_light.png" />
+    <Content Include="Assets\ovc_minus_ra_dark.png" />
+    <Content Include="Assets\ovc_minus_ra_light.png" />
+    <Content Include="Assets\ovc_minus_ra_line_dark.png" />
+    <Content Include="Assets\ovc_minus_ra_line_light.png" />
+    <Content Include="Assets\ovc_minus_sn_dark.png" />
+    <Content Include="Assets\ovc_minus_sn_light.png" />
+    <Content Include="Assets\ovc_minus_sn_line_dark.png" />
+    <Content Include="Assets\ovc_minus_sn_line_light.png" />
+    <Content Include="Assets\ovc_plus_ra_dark.png" />
+    <Content Include="Assets\ovc_plus_ra_light.png" />
+    <Content Include="Assets\ovc_plus_ra_line_dark.png" />
+    <Content Include="Assets\ovc_plus_ra_line_light.png" />
+    <Content Include="Assets\ovc_plus_sn_dark.png" />
+    <Content Include="Assets\ovc_plus_sn_light.png" />
+    <Content Include="Assets\ovc_plus_sn_line_dark.png" />
+    <Content Include="Assets\ovc_plus_sn_line_light.png" />
+    <Content Include="Assets\ovc_ra_dark.png" />
+    <Content Include="Assets\ovc_ra_ice_dark.png" />
+    <Content Include="Assets\ovc_ra_ice_light.png" />
+    <Content Include="Assets\ovc_ra_ice_line_dark.png" />
+    <Content Include="Assets\ovc_ra_ice_line_light.png" />
+    <Content Include="Assets\ovc_ra_light.png" />
+    <Content Include="Assets\ovc_ra_line_dark.png" />
+    <Content Include="Assets\ovc_ra_line_light.png" />
+    <Content Include="Assets\ovc_ra_sn_dark.png" />
+    <Content Include="Assets\ovc_ra_sn_light.png" />
+    <Content Include="Assets\ovc_ra_sn_line_dark.png" />
+    <Content Include="Assets\ovc_ra_sn_line_light.png" />
+    <Content Include="Assets\ovc_sn_dark.png" />
+    <Content Include="Assets\ovc_sn_light.png" />
+    <Content Include="Assets\ovc_sn_line_dark.png" />
+    <Content Include="Assets\ovc_sn_line_light.png" />
+    <Content Include="Assets\ovc_ts_dark.png" />
+    <Content Include="Assets\ovc_ts_ha_dark.png" />
+    <Content Include="Assets\ovc_ts_ha_light.png" />
+    <Content Include="Assets\ovc_ts_ha_line_dark.png" />
+    <Content Include="Assets\ovc_ts_ha_line_light.png" />
+    <Content Include="Assets\ovc_ts_light.png" />
+    <Content Include="Assets\ovc_ts_line_dark.png" />
+    <Content Include="Assets\ovc_ts_line_light.png" />
+    <Content Include="Assets\ovc_ts_ra_dark.png" />
+    <Content Include="Assets\ovc_ts_ra_light.png" />
+    <Content Include="Assets\ovc_ts_ra_line_dark.png" />
+    <Content Include="Assets\ovc_ts_ra_line_light.png" />
+    <Content Include="Assets\sad_sun.png" />
+    <Content Include="Assets\sad_sun_black.png" />
+    <Content Include="Assets\skc_d_dark.png" />
+    <Content Include="Assets\skc_d_light.png" />
+    <Content Include="Assets\skc_d_line_dark.png" />
+    <Content Include="Assets\skc_d_line_light.png" />
+    <Content Include="Assets\skc_n_dark.png" />
+    <Content Include="Assets\skc_n_light.png" />
+    <Content Include="Assets\skc_n_line_dark.png" />
+    <Content Include="Assets\skc_n_line_light.png" />
+    <Content Include="Assets\smog_dark.png" />
+    <Content Include="Assets\smog_light.png" />
+    <Content Include="Assets\smog_line_dark.png" />
+    <Content Include="Assets\smog_line_light.png" />
+    <Content Include="Assets\strm_dark.png" />
+    <Content Include="Assets\strm_light.png" />
+    <Content Include="Assets\strm_line_dark.png" />
+    <Content Include="Assets\strm_line_light.png" />
+    <Content Include="Assets\vlka_dark.png" />
+    <Content Include="Assets\vlka_light.png" />
+    <Content Include="Assets\vlka_line_dark.png" />
+    <Content Include="Assets\vlka_line_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.8.999" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.8.999" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.8.999" />
+    <PackageReference Include="Iot.Device.Bindings" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Forecast.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

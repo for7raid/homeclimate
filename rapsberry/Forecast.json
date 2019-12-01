@@ -1,0 +1,76 @@
+{
+  "now": 1575181579,
+  "now_dt": "2019-12-01T06:26:19.955Z",
+  "info": {
+    "lat": 55.75396,
+    "lon": 37.620393,
+    "url": "https://yandex.ru/pogoda/?lat=55.75396&lon=37.620393"
+  },
+  "fact": {
+    "temp": -1,
+    "feels_like": -5,
+    "icon": "ovc",
+    "condition": "overcast",
+    "wind_speed": 2,
+    "wind_gust": 6.5,
+    "wind_dir": "nw",
+    "pressure_mm": 744,
+    "pressure_pa": 992,
+    "humidity": 61,
+    "daytime": "d",
+    "polar": false,
+    "season": "winter",
+    "obs_time": 1575181296
+  },
+  "forecast": {
+    "date": "2019-12-01",
+    "date_ts": 1575147600,
+    "week": 48,
+    "sunrise": "08:34",
+    "sunset": "16:02",
+    "moon_code": 10,
+    "moon_text": "growing-moon",
+    "parts": [
+      {
+        "part_name": "day",
+        "temp_min": -2,
+        "temp_max": -1,
+        "temp_avg": -1,
+        "feels_like": -6,
+        "icon": "bkn_d",
+        "condition": "cloudy",
+        "daytime": "d",
+        "polar": false,
+        "wind_speed": 4,
+        "wind_gust": 9.1,
+        "wind_dir": "nw",
+        "pressure_mm": 745,
+        "pressure_pa": 994,
+        "humidity": 71,
+        "prec_mm": 0,
+        "prec_period": 360,
+        "prec_prob": 0
+      },
+      {
+        "part_name": "evening",
+        "temp_min": -2,
+        "temp_max": -1,
+        "temp_avg": -1,
+        "feels_like": -6,
+        "icon": "ovc",
+        "condition": "overcast",
+        "daytime": "n",
+        "polar": false,
+        "wind_speed": 3.4,
+        "wind_gust": 8.4,
+        "wind_dir": "w",
+        "pressure_mm": 748,
+        "pressure_pa": 998,
+        "humidity": 78,
+        "prec_mm": 0,
+        "prec_period": 360,
+        "prec_prob": 0
+      }
+    ]
+  }
+}

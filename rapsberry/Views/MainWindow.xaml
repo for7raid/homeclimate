@@ -1,0 +1,175 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:homeclimate.ViewModels;assembly=homeclimate"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="480"
+        Width="800" Height="480"
+        x:Class="homeclimate.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="homeclimate" HasSystemDecorations="False" Background="Black" Foreground="DarkGray">
+
+
+  <Window.Styles>
+    <Style Selector="TextBlock.h1">
+      <Setter Property="FontSize" Value="60"/>
+      <Setter Property="FontWeight" Value="Bold"/>
+      <Setter Property="VerticalAlignment" Value="Bottom"/>
+      <Setter Property="Margin" Value="5,0,-5,15"/>
+    </Style>
+
+    <Style Selector="TextBlock.h2">
+      <Setter Property="FontSize" Value="50"/>
+      <Setter Property="FontWeight" Value="Bold"/>
+      <Setter Property="VerticalAlignment" Value="Bottom"/>
+      <Setter Property="Margin" Value="5,0,-5,15"/>
+    </Style>
+
+    <Style Selector=".mainroom TextBlock.h4">
+      <Setter Property="FontSize" Value="16"/>
+      <Setter Property="VerticalAlignment" Value="Top"/>
+      <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style Selector=".mainroom TextBlock.measure">
+      <Setter Property="FontSize" Value="14"/>
+      <Setter Property="VerticalAlignment" Value="Bottom"/>
+      <Setter Property="Margin" Value="5,5,5,5"/>
+    </Style>
+    <Style Selector="StackPanel.timeinfo TextBlock">
+      <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+  </Window.Styles>
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+
+  <Grid ColumnDefinitions="*,140,40" RowDefinitions="*,*">
+
+    <!--Время-->
+    <Grid RowDefinitions="3*,2*" ColumnDefinitions="7*,3*">
+
+      <StackPanel Orientation="Horizontal">
+
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="130" Text="{Binding Path=Now, StringFormat={}{0:HH}}"></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="70" Margin="10,50" Text="{Binding Path=Now, StringFormat={}{0:ss}}"></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="130" Text="{Binding Path=Now, StringFormat={}{0:mm}}"></TextBlock>
+      </StackPanel>
+
+
+      <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="40" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Path=Now, StringFormat={}{0:dddd\, dd MMMM}}"></TextBlock>
+
+      <StackPanel Grid.Column="1" Grid.RowSpan="10" Classes="timeinfo" VerticalAlignment="Top" Margin="10">
+        <TextBlock Text="{Binding DayInfo.Sunrise, StringFormat={}Восход: {0:HH:mm}}"></TextBlock>
+        <TextBlock Text="{Binding DayInfo.DayMiddle, StringFormat={}Зенит: {0:hh\\:mm}}"></TextBlock>
+        <TextBlock Text="{Binding DayInfo.Sunset, StringFormat={}Закат: {0:HH:mm}}"></TextBlock>
+        <TextBlock Text="{Binding DayInfo.DayLong, StringFormat={}День: {0:hh\\:mm}}"></TextBlock>
+        <TextBlock Text="{Binding DayInfo.Moon, StringFormat={}Луна: {0}}"></TextBlock>
+      </StackPanel>
+
+      <Border BorderBrush="White" BorderThickness="0,0,0,1" Grid.Row="10">
+      </Border>
+    </Grid>
+
+    <!--Погода-->
+    <Grid Grid.Row="1">
+      <Border BorderBrush="White" BorderThickness="0,1,0,0">
+        <ItemsControl Items="{Binding Forecasts}">
+          <ItemsControl.Styles>
+            <Style Selector="TextBlock">
+              <Setter Property="HorizontalAlignment" Value="Center"/>
+              <Setter Property="FontSize" Value="20"/>
+            </Style>
+          </ItemsControl.Styles>
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Width="200" Margin="0,10,0,0">
+                <TextBlock
+                          Text="{Binding Name}" FontSize="15"/>
+                <Image Width="84" Height="84" Source="{Binding IconBitmap}" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                  <TextBlock Text="{Binding Condition}" FontSize="12"/>
+                  <TextBlock Text="{Binding PrecProb, StringFormat={} {0}%}" FontSize="12" IsVisible="{Binding !!PrecProb}" />
+                </StackPanel>
+                <TextBlock Text="{Binding Temp, StringFormat={}{0} °C}"/>
+                <TextBlock Text="{Binding TempFeels, StringFormat={}как {0} °C}"/>
+                <TextBlock>
+                  <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{0} м/с {1}">
+                      <Binding Path="WindSpeed"/>
+                      <Binding Path="WindDir"/>
+                    </MultiBinding>
+                  </TextBlock.Text>
+                </TextBlock>
+                <TextBlock Text="{Binding WindGust, StringFormat={}до {0} м/с}" FontSize="12" IsVisible="{Binding !!WindGust}" />
+              </StackPanel>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </Border>
+      <Button Foreground="Transparent" Background="Transparent" Command="{Binding UpdateForecast}"></Button>
+    </Grid>
+
+    <!--Погода в комнате-->
+    <Grid Grid.Column="1"  Grid.RowSpan="5" RowDefinitions="*,*,*,*" Classes="mainroom" DataContext="{Binding Home}">
+      <Border BorderBrush="White" BorderThickness="1">
+      </Border>
+      <TextBlock Classes="h4">Температруа</TextBlock>
+      <TextBlock Classes="h1" Text="{Binding Temp, StringFormat={}{0}°C}"/>
+
+      <Border BorderBrush="White" BorderThickness="1" Grid.Row="1">
+      </Border>
+      <TextBlock Classes="h4" Grid.Row="1">Влажность</TextBlock>
+      <TextBlock Classes="h1" Grid.Row="1" Text="{Binding Humidity, StringFormat={}{0}%}"></TextBlock>
+
+
+      <Border BorderBrush="White" BorderThickness="1" Grid.Row="2">
+      </Border>
+      <TextBlock Classes="h4" Grid.Row="2">Давление</TextBlock>
+      <TextBlock Classes="h1" Grid.Row="2" Text="{Binding Preasure, StringFormat={}{0}}"></TextBlock>
+      <TextBlock Classes="measure" Grid.Row="2">мм.рт.ст.</TextBlock>
+
+      <Border BorderBrush="White" BorderThickness="1" Grid.Row="3">
+      </Border>
+      <TextBlock Classes="h4" Grid.Row="3">CO2</TextBlock>
+      <TextBlock Classes="h2" Grid.Row="3" Text="{Binding CO2, StringFormat={}{0}}"></TextBlock>
+      <TextBlock Classes="measure" Grid.Row="3">PPO</TextBlock>
+
+      <Button Foreground="Transparent" Background="Transparent" Command="{Binding UpdateHome}" Grid.RowSpan="10"></Button>
+    </Grid>
+
+    <!--Углекислый газ-->
+    <Grid Grid.Column="2" Grid.RowSpan="5" ColumnDefinitions="3*,2*">
+
+      <Rectangle Width="15" Height="480" Grid.Column="1">
+        <Rectangle.Fill>
+          <LinearGradientBrush StartPoint="0,0" EndPoint="0,480">
+            <GradientStop Color="Red" Offset="0" />
+            <GradientStop Color="Yellow" Offset="0.5" />
+            <GradientStop Color="Green" Offset="0.9" />
+          </LinearGradientBrush>
+        </Rectangle.Fill>
+      </Rectangle>
+
+      <Rectangle Width="24" Height="480" Grid.Column="0">
+        <Rectangle.Fill>
+          <LinearGradientBrush StartPoint="0,0" EndPoint="0,480">
+            <GradientStop Color="Red" Offset="0" />
+            <GradientStop Color="Yellow" Offset="0.5" />
+            <GradientStop Color="Green" Offset="0.9" />
+          </LinearGradientBrush>
+        </Rectangle.Fill>
+      </Rectangle>
+
+      <Rectangle Height="{Binding Home.CO2Height}" Width="24" Fill="Black" Grid.Column="0" Grid.RowSpan="3" VerticalAlignment="Top"/>
+
+    </Grid>
+  </Grid>
+
+</Window>
