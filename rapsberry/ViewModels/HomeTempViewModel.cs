@@ -4,7 +4,9 @@ using ReactiveUI;
 using System;
 using System.Collections.Generic;
 using System.Device.I2c;
+using System.IO.Ports;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace homeclimate.ViewModels
 {
@@ -54,22 +56,58 @@ namespace homeclimate.ViewModels
 
         public void UpdateHome()
         {
-
-            I2cDevice device = I2cDevice.Create(new I2cConnectionSettings(1, Si7021.DefaultI2cAddress));
-
-            using (device)
-            using (Si7021 sensor = new Si7021(device, Resolution.Resolution1))
+            try
             {
-                Humidity = (int)sensor.Humidity;
+                I2cDevice device = I2cDevice.Create(new I2cConnectionSettings(1, Si7021.DefaultI2cAddress));
+
+                using (device)
+                using (Si7021 sensor = new Si7021(device, Resolution.Resolution1))
+                {
+                    Humidity = (int)sensor.Humidity;
+                    Temp = (int)sensor.Temperature.Celsius;
+                }
+
+                Task.Run(() =>
+                {
+                    using (SerialPort sp = new SerialPort("/dev/ttyS0", 9600, Parity.None, 8, StopBits.One))
+                    {
+
+                        var cmd = new byte[9] { 0xFF, 0x01, 0x86, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79 };
+                        sp.Open();
+                        sp.Write(cmd, 0, cmd.Length);
+
+                        var response = new byte[9];
+                        sp.Read(response, 0, 9);
+                        int i;
+                        int crc = 0;
+                        for (i = 1; i < 8; i++) crc += response[i];
+                        crc = 255 - crc;
+                        crc++;
+
+                        if (response[0] == 0xFF && response[1] == 0x86 && response[8] == crc)
+                        {
+                            int responseHigh = (int)response[2];
+                            int responseLow = (int)response[3];
+                            int ppm = (256 * responseHigh) + responseLow;
+                            CO2 = ppm;
+                        }
+                        sp.Close();
+                    }
+
+                }).Wait(300);
+
+                //device = I2cDevice.Create(new I2cConnectionSettings(1, Bmp180.DefaultI2cAddress));
+
+                //using (device)
+                //using (var i2CBmpe80 = new Bmp180(device))
+                //{
+                //    var preValue = i2CBmpe80.ReadPressure() / 100.0F * 0.75006375541921;
+                //    Preasure = (int)preValue;
+                //}
             }
-
-            device = I2cDevice.Create(new I2cConnectionSettings(1, Bmp180.DefaultI2cAddress));
-
-            using (device)
-            using (var i2CBmpe80 = new Bmp180(device))
+            catch (Exception e)
             {
-                var preValue = i2CBmpe80.ReadPressure() / 100.0F * 0.75006375541921;
-                Preasure = (int)preValue;
+                Console.WriteLine(e);
             }
         }
 

@@ -139,7 +139,7 @@
       </Border>
       <TextBlock Classes="h4" Grid.Row="3">CO2</TextBlock>
       <TextBlock Classes="h2" Grid.Row="3" Text="{Binding CO2, StringFormat={}{0}}"></TextBlock>
-      <TextBlock Classes="measure" Grid.Row="3">PPO</TextBlock>
+      <TextBlock Classes="measure" Grid.Row="3">PPM</TextBlock>
 
       <Button Foreground="Transparent" Background="Transparent" Command="{Binding UpdateHome}" Grid.RowSpan="10"></Button>
     </Grid>

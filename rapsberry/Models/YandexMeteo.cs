@@ -20,6 +20,8 @@ namespace homeclimate.Models
         public double wind_gust { get; set; }
         public string wind_dir { get; set; }
 
+        public int pressure_mm { get; set; }
+
     }
 
     public class Forecast

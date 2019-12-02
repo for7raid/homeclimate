@@ -92,6 +92,8 @@ namespace homeclimate.ViewModels
                     PrecProb = item.prec_prob
                 });
             }
+
+            Home.Preasure = forecast.fact.pressure_mm;
         }
 
         private void TimeTimer_Tick(object sender, EventArgs e)
