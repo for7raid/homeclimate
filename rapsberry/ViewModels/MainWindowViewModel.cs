@@ -38,7 +38,7 @@ namespace homeclimate.ViewModels
             forecastTimer.Tick += (s, e) => { UpdateForecast(); };
             forecastTimer.Start();
 
-            var homeTimer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(5), IsEnabled = true };
+            var homeTimer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(1), IsEnabled = true };
             homeTimer.Tick += (s, e) => { Home.UpdateHome(); };
 
             UpdateForecast();
@@ -49,51 +49,60 @@ namespace homeclimate.ViewModels
 
         private async void UpdateForecast()
         {
-            Forecasts.Clear();
+            try
+            {
+
 
 #if DEBUG
-            var text = await System.IO.File.ReadAllTextAsync(@"C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\rapsberry\bin\Release\netcoreapp2.2\publish\forecast.json");
+                var text = await System.IO.File.ReadAllTextAsync(@"C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\rapsberry\forecast.json");
 #else
             
             HttpResponseMessage response = await client.GetAsync($@"https://api.weather.yandex.ru/v1/informers?lat=55.75396&lon=37.620393");
             response.EnsureSuccessStatusCode();
             var text = await response.Content.ReadAsStringAsync();
 #endif
-            var forecast = Newtonsoft.Json.JsonConvert.DeserializeObject<Models.YandexMeteo>(text);
-            DayInfo.Sunrise = DateTime.ParseExact(forecast.forecast.sunrise, "HH:mm", CultureInfo.InvariantCulture);
-            DayInfo.Sunset = DateTime.ParseExact(forecast.forecast.sunset, "HH:mm", CultureInfo.InvariantCulture);
-            DayInfo.Moon = forecast.forecast.moon_text;
+                Forecasts.Clear();
+                var forecast = Newtonsoft.Json.JsonConvert.DeserializeObject<Models.YandexMeteo>(text);
+                DayInfo.Sunrise = DateTime.ParseExact(forecast.forecast.sunrise, "HH:mm", CultureInfo.InvariantCulture);
+                DayInfo.Sunset = DateTime.ParseExact(forecast.forecast.sunset, "HH:mm", CultureInfo.InvariantCulture);
+                DayInfo.Moon = forecast.forecast.moon_text;
 
-            Forecasts.Add(new ForecastPartViewModel
-            {
-                Name = "Сейчас (" + DateTime.Now.ToString("HH:mm") + ")",
-                Temp = forecast.fact.temp,
-                TempFeels = forecast.fact.feels_like,
-                WindDir = forecast.fact.wind_dir,
-                WindSpeed = forecast.fact.wind_speed,
-                WindGust = forecast.fact.wind_gust,
-                Icon = forecast.fact.icon,
-                Condition = forecast.fact.condition,
-                PrecProb = 0
-            });
-
-            foreach (var item in forecast.forecast.parts)
-            {
                 Forecasts.Add(new ForecastPartViewModel
                 {
-                    Name = item.part_name,
-                    Temp = item.temp_avg,
-                    TempFeels = item.feels_like,
-                    WindDir = item.wind_dir,
-                    WindSpeed = item.wind_speed,
-                    WindGust = item.wind_gust,
-                    Icon = item.icon,
-                    Condition = item.condition,
-                    PrecProb = item.prec_prob
+                    Name = "Сейчас (" + DateTime.Now.ToString("HH:mm") + ")",
+                    Temp = forecast.fact.temp,
+                    TempFeels = forecast.fact.feels_like,
+                    WindDir = forecast.fact.wind_dir,
+                    WindSpeed = forecast.fact.wind_speed,
+                    WindGust = forecast.fact.wind_gust,
+                    Icon = forecast.fact.icon,
+                    Condition = forecast.fact.condition,
+                    PrecProb = 0
                 });
-            }
 
-            Home.Preasure = forecast.fact.pressure_mm;
+                foreach (var item in forecast.forecast.parts)
+                {
+                    Forecasts.Add(new ForecastPartViewModel
+                    {
+                        Name = item.part_name,
+                        Temp = item.temp_avg,
+                        TempFeels = item.feels_like,
+                        WindDir = item.wind_dir,
+                        WindSpeed = item.wind_speed,
+                        WindGust = item.wind_gust,
+                        Icon = item.icon,
+                        Condition = item.condition,
+                        PrecProb = item.prec_prob
+                    });
+                }
+
+                Home.Preasure = forecast.fact.pressure_mm;
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+             }
         }
 
         private void TimeTimer_Tick(object sender, EventArgs e)

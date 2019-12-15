@@ -1,39 +1,36 @@
-﻿using Iot.Device.Bmp180;
-using Iot.Device.Si7021;
+﻿using Iot.Device.Si7021;
 using ReactiveUI;
 using System;
-using System.Collections.Generic;
 using System.Device.I2c;
 using System.IO.Ports;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace homeclimate.ViewModels
 {
     public class HomeTempViewModel : ViewModelBase
     {
-        private int _temp;
+        private int _temp = 24;
         public int Temp
         {
             get => _temp;
             set => this.RaiseAndSetIfChanged(ref _temp, value);
         }
 
-        private int _hum;
+        private int _hum = 45;
         public int Humidity
         {
             get => _hum;
             set => this.RaiseAndSetIfChanged(ref _hum, value);
         }
 
-        private int _pleasure;
+        private int _pleasure = 477;
         public int Preasure
         {
             get => _pleasure;
             set => this.RaiseAndSetIfChanged(ref _pleasure, value);
         }
 
-        private int _co2 = 1800;
+        private int _co2 = 1400;
         public int CO2
         {
             get => _co2;
@@ -50,7 +47,7 @@ namespace homeclimate.ViewModels
         {
             get
             {
-                return 480 - map(_co2, 500, 2000, 0, 480);
+                return 800 - map(_co2, 500, 2000, 0, 800);
             }
         }
 
@@ -64,9 +61,9 @@ namespace homeclimate.ViewModels
                 using (Si7021 sensor = new Si7021(device, Resolution.Resolution1))
                 {
                     Humidity = (int)sensor.Humidity;
-                    Temp = (int)sensor.Temperature.Celsius;
+                    Temp = (int)Math.Round(sensor.Temperature.Celsius, MidpointRounding.AwayFromZero);
                 }
-
+                
                 Task.Run(() =>
                 {
                     using (SerialPort sp = new SerialPort("/dev/ttyS0", 9600, Parity.None, 8, StopBits.One))
@@ -75,13 +72,14 @@ namespace homeclimate.ViewModels
                         var cmd = new byte[9] { 0xFF, 0x01, 0x86, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79 };
                         sp.Open();
                         sp.Write(cmd, 0, cmd.Length);
+                        System.Threading.Thread.Sleep(300);
 
                         var response = new byte[9];
                         sp.Read(response, 0, 9);
                         int i;
-                        int crc = 0;
+                        byte crc = 0;
                         for (i = 1; i < 8; i++) crc += response[i];
-                        crc = 255 - crc;
+                        crc = (byte)((byte)255 - crc);
                         crc++;
 
                         if (response[0] == 0xFF && response[1] == 0x86 && response[8] == crc)
@@ -91,19 +89,15 @@ namespace homeclimate.ViewModels
                             int ppm = (256 * responseHigh) + responseLow;
                             CO2 = ppm;
                         }
+                        else
+                        {
+                            Console.WriteLine("{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}; crc:{9}", response[0], response[1], response[2], response[3], response[4], response[5], response[6], response[7], response[8], crc);
+                        }
                         sp.Close();
                     }
 
-                }).Wait(300);
+                }).Wait(600);
 
-                //device = I2cDevice.Create(new I2cConnectionSettings(1, Bmp180.DefaultI2cAddress));
-
-                //using (device)
-                //using (var i2CBmpe80 = new Bmp180(device))
-                //{
-                //    var preValue = i2CBmpe80.ReadPressure() / 100.0F * 0.75006375541921;
-                //    Preasure = (int)preValue;
-                //}
             }
             catch (Exception e)
             {

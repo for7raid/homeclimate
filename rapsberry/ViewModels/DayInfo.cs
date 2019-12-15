@@ -8,12 +8,12 @@ namespace homeclimate.ViewModels
     public class DayInfo: ViewModelBase
     {
         public static Dictionary<string, string> MoonNames = new Dictionary<string, string>() {
-            { "full-moon", "полнолуние" },
-            { "decreasing-moon", "убывающая" },
-            { "last-quarter", "посл. чтв." },
-            { "new-moon", "новолуние" },
-            { "growing-moon", "растущая" },
-            { "first-quarter", "перв. чтв." }
+            { "full-moon", "Полнолуние" },
+            { "decreasing-moon", "Убывающая луна" },
+            { "last-quarter", "Последняя четверть" },
+            { "new-moon", "Новолуние" },
+            { "growing-moon", "Растущая луна" },
+            { "first-quarter", "Первая четверть" }
         };
 
         private DateTime _sunrise = DateTime.Now;

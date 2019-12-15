@@ -87,7 +87,8 @@ namespace homeclimate.ViewModels
             get
             {
                 var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
-                var stream = assets.Open(new Uri($@"avares://homeclimate/Assets/{icon.Replace("-","minus_")}_dark.png"));
+                //var stream = assets.Open(new Uri($@"avares://homeclimate/Assets/Dark/{icon}.png"));
+                var stream = assets.Open(new Uri($@"avares://homeclimate/Assets/{icon.Replace("-","minus_").Replace("+","plus_")}_light.png"));
                 var bitmap = new Bitmap(stream);
                 return bitmap;
             }

@@ -73,6 +73,49 @@
     <Content Include="Assets\bl_light.png" />
     <Content Include="Assets\bl_line_dark.png" />
     <Content Include="Assets\bl_line_light.png" />
+    <Content Include="Assets\Dark\bkn_+ra_d.png" />
+    <Content Include="Assets\Dark\bkn_+ra_n.png" />
+    <Content Include="Assets\Dark\bkn_+sn_d.png" />
+    <Content Include="Assets\Dark\bkn_+sn_n.png" />
+    <Content Include="Assets\Dark\bkn_-ra_d.png" />
+    <Content Include="Assets\Dark\bkn_-ra_n.png" />
+    <Content Include="Assets\Dark\bkn_-sn_d.png" />
+    <Content Include="Assets\Dark\bkn_-sn_n.png" />
+    <Content Include="Assets\Dark\bkn_d.png" />
+    <Content Include="Assets\Dark\bkn_n.png" />
+    <Content Include="Assets\Dark\bkn_ra_d.png" />
+    <Content Include="Assets\Dark\bkn_ra_n.png" />
+    <Content Include="Assets\Dark\bkn_sn_d.png" />
+    <Content Include="Assets\Dark\bkn_sn_n.png" />
+    <Content Include="Assets\Dark\bl-.png" />
+    <Content Include="Assets\Dark\bl.png" />
+    <Content Include="Assets\Dark\fct_+ra.png" />
+    <Content Include="Assets\Dark\fct_+sn.png" />
+    <Content Include="Assets\Dark\fct_-ra.png" />
+    <Content Include="Assets\Dark\fct_-sn.png" />
+    <Content Include="Assets\Dark\fct_ra.png" />
+    <Content Include="Assets\Dark\fct_ra_sn.png" />
+    <Content Include="Assets\Dark\fct_sn.png" />
+    <Content Include="Assets\Dark\fct_sn_dwn.png" />
+    <Content Include="Assets\Dark\fct_sn_rs.png" />
+    <Content Include="Assets\Dark\fct_ts.png" />
+    <Content Include="Assets\Dark\fct_ts_ra.png" />
+    <Content Include="Assets\Dark\fg_d.png" />
+    <Content Include="Assets\Dark\fg_n.png" />
+    <Content Include="Assets\Dark\ovc.png" />
+    <Content Include="Assets\Dark\ovc_+ra.png" />
+    <Content Include="Assets\Dark\ovc_+sn.png" />
+    <Content Include="Assets\Dark\ovc_-ra.png" />
+    <Content Include="Assets\Dark\ovc_-sn.png" />
+    <Content Include="Assets\Dark\ovc_gr.png" />
+    <Content Include="Assets\Dark\ovc_ra.png" />
+    <Content Include="Assets\Dark\ovc_ra_sn.png" />
+    <Content Include="Assets\Dark\ovc_sn.png" />
+    <Content Include="Assets\Dark\ovc_ts.png" />
+    <Content Include="Assets\Dark\ovc_ts_gr.png" />
+    <Content Include="Assets\Dark\ovc_ts_ra.png" />
+    <Content Include="Assets\Dark\skc_d.png" />
+    <Content Include="Assets\Dark\skc_n.png" />
     <Content Include="Assets\dst_dark.png" />
     <Content Include="Assets\dst_light.png" />
     <Content Include="Assets\dst_line_dark.png" />
@@ -224,8 +267,12 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.IO.Ports" Version="4.6.0" />
   </ItemGroup>
+
   <ItemGroup>
     <None Update="Forecast.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="start.sh">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

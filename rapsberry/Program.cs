@@ -26,7 +26,7 @@ namespace homeclimate
         // container, etc.
         private static void AppMain(Application app, string[] args)
         {
-            var window = new MainWindow
+            var window = new MainWindow2
             {
                 DataContext = new MainWindowViewModel(),
             };

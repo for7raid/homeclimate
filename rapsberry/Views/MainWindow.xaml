@@ -12,7 +12,7 @@
 
   <Window.Styles>
     <Style Selector="TextBlock.h1">
-      <Setter Property="FontSize" Value="60"/>
+      <Setter Property="FontSize" Value="55"/>
       <Setter Property="FontWeight" Value="Bold"/>
       <Setter Property="VerticalAlignment" Value="Bottom"/>
       <Setter Property="Margin" Value="5,0,-5,15"/>
@@ -37,7 +37,7 @@
       <Setter Property="Margin" Value="5,5,5,5"/>
     </Style>
     <Style Selector="StackPanel.timeinfo TextBlock">
-      <Setter Property="FontSize" Value="20"/>
+      <Setter Property="FontSize" Value="18"/>
     </Style>
 
   </Window.Styles>
@@ -45,7 +45,7 @@
     <vm:MainWindowViewModel/>
   </Design.DataContext>
 
-  <Grid ColumnDefinitions="*,140,40" RowDefinitions="*,*">
+  <Grid ColumnDefinitions="*,135,40" RowDefinitions="*,*">
 
     <!--Время-->
     <Grid RowDefinitions="3*,2*" ColumnDefinitions="7*,3*">
@@ -68,7 +68,7 @@
         <TextBlock Text="{Binding DayInfo.Moon, StringFormat={}Луна: {0}}"></TextBlock>
       </StackPanel>
 
-      <Border BorderBrush="White" BorderThickness="0,0,0,1" Grid.Row="10">
+      <Border BorderBrush="White" BorderThickness="0,0,0,1" Grid.Row="10" Grid.ColumnSpan="2">
       </Border>
     </Grid>
 
