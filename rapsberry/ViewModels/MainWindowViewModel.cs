@@ -1,5 +1,6 @@
 ﻿using Avalonia.Media.Imaging;
 using Avalonia.Threading;
+using InTheHand.Devices.Enumeration;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,8 @@ namespace homeclimate.ViewModels
         {
             try
             {
-
+                var picker = new DevicePicker();
+                var d = await picker.PickSingleDeviceAsync();
 
 #if DEBUG
                 var text = await System.IO.File.ReadAllTextAsync(@"C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\rapsberry\forecast.json");

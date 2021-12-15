@@ -1,0 +1,9 @@
+﻿pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\rapsberry\bin\Release\netcoreapp3.0\publish\*" pi@192.168.0.9:/opt/meteo/
+pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\rapsberry\bin\Release\netcoreapp3.0\publish\ho*" pi@192.168.0.9:/opt/meteo/
+
+pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\ConsoleApp1\bin\Release\netcoreapp3.0\publish\*" pi@192.168.0.9:/opt/tmp/meteo/
+pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\ConsoleApp1\bin\Release\netcoreapp3.0\publish\Co*" pi@192.168.0.9:/opt/tmp/meteo/
+
+pscp -pw 123456 "D:\Downloads\avalonia.skia.linux.natives.1.68.0.2.nupkg\libSkiaSharp.so" pi@192.168.0.9:/tmp/avalontest/
+
+sudo systemctl stop serial-getty@ttyS0.service
