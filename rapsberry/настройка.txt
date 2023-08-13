@@ -30,6 +30,6 @@ sudo mkdir meteo
 sudo chmod 777 meteo
 
 
-pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\rapsberry\bin\Release\netcoreapp3.0\publish\linux-arm64\*" pi@192.168.1.37:/opt/meteo/
+pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\AvaloniaApplication\bin\Release\net7.0\publish\linux-arm64\*" pi@192.168.1.37:/opt/meteo/
 cd /opt/meteo/
-sudo chmod +x homeclimate
+sudo chmod +x AvaloniaApplication

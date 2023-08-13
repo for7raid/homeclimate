@@ -11,3 +11,6 @@ pscp -pw 123456 "D:\Downloads\avalonia.skia.linux.natives.1.68.0.2.nupkg\libSkia
 sudo systemctl stop serial-getty@ttyS0.service
 
 pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\LCD-show-180817.tar.gz" pi@192.168.1.37:/tmp/LCD-show-180817.tar.gz
+
+
+pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\AvaloniaApplication\bin\Release\net7.0\publish\linux-arm64\*" pi@192.168.1.37:/opt/meteo/

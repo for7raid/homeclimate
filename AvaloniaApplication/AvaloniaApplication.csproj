@@ -1,0 +1,374 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Remove="Assets\Dark\bkn_+ra_d.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_+ra_n.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_+sn_d.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_+sn_n.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_-ra_d.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_-ra_n.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_-sn_d.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_-sn_n.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_d.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_n.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_ra_d.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_ra_n.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_sn_d.png" />
+    <AvaloniaResource Remove="Assets\Dark\bkn_sn_n.png" />
+    <AvaloniaResource Remove="Assets\Dark\bl-.png" />
+    <AvaloniaResource Remove="Assets\Dark\bl.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_+ra.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_+sn.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_-ra.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_-sn.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_ra.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_ra_sn.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_sn.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_sn_dwn.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_sn_rs.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_ts.png" />
+    <AvaloniaResource Remove="Assets\Dark\fct_ts_ra.png" />
+    <AvaloniaResource Remove="Assets\Dark\fg_d.png" />
+    <AvaloniaResource Remove="Assets\Dark\fg_n.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_+ra.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_+sn.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_-ra.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_-sn.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_gr.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_ra.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_ra_sn.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_sn.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_ts.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_ts_gr.png" />
+    <AvaloniaResource Remove="Assets\Dark\ovc_ts_ra.png" />
+    <AvaloniaResource Remove="Assets\Dark\skc_d.png" />
+    <AvaloniaResource Remove="Assets\Dark\skc_n.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\bkn_d_dark.png" />
+    <None Remove="Assets\bkn_d_light.png" />
+    <None Remove="Assets\bkn_d_line_dark.png" />
+    <None Remove="Assets\bkn_d_line_light.png" />
+    <None Remove="Assets\bkn_minus_ra_d_dark.png" />
+    <None Remove="Assets\bkn_minus_ra_d_light.png" />
+    <None Remove="Assets\bkn_minus_ra_d_line_dark.png" />
+    <None Remove="Assets\bkn_minus_ra_d_line_light.png" />
+    <None Remove="Assets\bkn_minus_ra_n_dark.png" />
+    <None Remove="Assets\bkn_minus_ra_n_light.png" />
+    <None Remove="Assets\bkn_minus_ra_n_line_dark.png" />
+    <None Remove="Assets\bkn_minus_ra_n_line_light.png" />
+    <None Remove="Assets\bkn_minus_sn_d_dark.png" />
+    <None Remove="Assets\bkn_minus_sn_d_light.png" />
+    <None Remove="Assets\bkn_minus_sn_d_line_dark.png" />
+    <None Remove="Assets\bkn_minus_sn_d_line_light.png" />
+    <None Remove="Assets\bkn_minus_sn_n_dark.png" />
+    <None Remove="Assets\bkn_minus_sn_n_light.png" />
+    <None Remove="Assets\bkn_minus_sn_n_line_dark.png" />
+    <None Remove="Assets\bkn_minus_sn_n_line_light.png" />
+    <None Remove="Assets\bkn_n_dark.png" />
+    <None Remove="Assets\bkn_n_light.png" />
+    <None Remove="Assets\bkn_n_line_dark.png" />
+    <None Remove="Assets\bkn_n_line_light.png" />
+    <None Remove="Assets\bkn_plus_ra_d_dark.png" />
+    <None Remove="Assets\bkn_plus_ra_d_light.png" />
+    <None Remove="Assets\bkn_plus_ra_d_line_dark.png" />
+    <None Remove="Assets\bkn_plus_ra_d_line_light.png" />
+    <None Remove="Assets\bkn_plus_ra_n_dark.png" />
+    <None Remove="Assets\bkn_plus_ra_n_light.png" />
+    <None Remove="Assets\bkn_plus_ra_n_line_dark.png" />
+    <None Remove="Assets\bkn_plus_ra_n_line_light.png" />
+    <None Remove="Assets\bkn_plus_sn_d_dark.png" />
+    <None Remove="Assets\bkn_plus_sn_d_light.png" />
+    <None Remove="Assets\bkn_plus_sn_d_line_dark.png" />
+    <None Remove="Assets\bkn_plus_sn_d_line_light.png" />
+    <None Remove="Assets\bkn_plus_sn_n_dark.png" />
+    <None Remove="Assets\bkn_plus_sn_n_light.png" />
+    <None Remove="Assets\bkn_plus_sn_n_line_dark.png" />
+    <None Remove="Assets\bkn_plus_sn_n_line_light.png" />
+    <None Remove="Assets\bkn_ra_d_dark.png" />
+    <None Remove="Assets\bkn_ra_d_light.png" />
+    <None Remove="Assets\bkn_ra_d_line_dark.png" />
+    <None Remove="Assets\bkn_ra_d_line_light.png" />
+    <None Remove="Assets\bkn_ra_n_dark.png" />
+    <None Remove="Assets\bkn_ra_n_light.png" />
+    <None Remove="Assets\bkn_ra_n_line_dark.png" />
+    <None Remove="Assets\bkn_ra_n_line_light.png" />
+    <None Remove="Assets\bkn_sn_d_dark.png" />
+    <None Remove="Assets\bkn_sn_d_light.png" />
+    <None Remove="Assets\bkn_sn_d_line_dark.png" />
+    <None Remove="Assets\bkn_sn_d_line_light.png" />
+    <None Remove="Assets\bkn_sn_n_dark.png" />
+    <None Remove="Assets\bkn_sn_n_light.png" />
+    <None Remove="Assets\bkn_sn_n_line_dark.png" />
+    <None Remove="Assets\bkn_sn_n_line_light.png" />
+    <None Remove="Assets\bl_dark.png" />
+    <None Remove="Assets\bl_light.png" />
+    <None Remove="Assets\bl_line_dark.png" />
+    <None Remove="Assets\bl_line_light.png" />
+    <None Remove="Assets\Dark\bkn_+ra_d.png" />
+    <None Remove="Assets\Dark\bkn_+ra_n.png" />
+    <None Remove="Assets\Dark\bkn_+sn_d.png" />
+    <None Remove="Assets\Dark\bkn_+sn_n.png" />
+    <None Remove="Assets\Dark\bkn_-ra_d.png" />
+    <None Remove="Assets\Dark\bkn_-ra_n.png" />
+    <None Remove="Assets\Dark\bkn_-sn_d.png" />
+    <None Remove="Assets\Dark\bkn_-sn_n.png" />
+    <None Remove="Assets\Dark\bkn_d.png" />
+    <None Remove="Assets\Dark\bkn_n.png" />
+    <None Remove="Assets\Dark\bkn_ra_d.png" />
+    <None Remove="Assets\Dark\bkn_ra_n.png" />
+    <None Remove="Assets\Dark\bkn_sn_d.png" />
+    <None Remove="Assets\Dark\bkn_sn_n.png" />
+    <None Remove="Assets\Dark\bl-.png" />
+    <None Remove="Assets\Dark\bl.png" />
+    <None Remove="Assets\Dark\fct_+ra.png" />
+    <None Remove="Assets\Dark\fct_+sn.png" />
+    <None Remove="Assets\Dark\fct_-ra.png" />
+    <None Remove="Assets\Dark\fct_-sn.png" />
+    <None Remove="Assets\Dark\fct_ra.png" />
+    <None Remove="Assets\Dark\fct_ra_sn.png" />
+    <None Remove="Assets\Dark\fct_sn.png" />
+    <None Remove="Assets\Dark\fct_sn_dwn.png" />
+    <None Remove="Assets\Dark\fct_sn_rs.png" />
+    <None Remove="Assets\Dark\fct_ts.png" />
+    <None Remove="Assets\Dark\fct_ts_ra.png" />
+    <None Remove="Assets\Dark\fg_d.png" />
+    <None Remove="Assets\Dark\fg_n.png" />
+    <None Remove="Assets\Dark\ovc.png" />
+    <None Remove="Assets\Dark\ovc_+ra.png" />
+    <None Remove="Assets\Dark\ovc_+sn.png" />
+    <None Remove="Assets\Dark\ovc_-ra.png" />
+    <None Remove="Assets\Dark\ovc_-sn.png" />
+    <None Remove="Assets\Dark\ovc_gr.png" />
+    <None Remove="Assets\Dark\ovc_ra.png" />
+    <None Remove="Assets\Dark\ovc_ra_sn.png" />
+    <None Remove="Assets\Dark\ovc_sn.png" />
+    <None Remove="Assets\Dark\ovc_ts.png" />
+    <None Remove="Assets\Dark\ovc_ts_gr.png" />
+    <None Remove="Assets\Dark\ovc_ts_ra.png" />
+    <None Remove="Assets\Dark\skc_d.png" />
+    <None Remove="Assets\Dark\skc_n.png" />
+    <None Remove="Assets\dst_dark.png" />
+    <None Remove="Assets\dst_light.png" />
+    <None Remove="Assets\dst_line_dark.png" />
+    <None Remove="Assets\dst_line_light.png" />
+    <None Remove="Assets\du_st_dark.png" />
+    <None Remove="Assets\du_st_light.png" />
+    <None Remove="Assets\du_st_line_dark.png" />
+    <None Remove="Assets\du_st_line_light.png" />
+    <None Remove="Assets\du_ts_dark.png" />
+    <None Remove="Assets\du_ts_light.png" />
+    <None Remove="Assets\du_ts_line_dark.png" />
+    <None Remove="Assets\du_ts_line_light.png" />
+    <None Remove="Assets\fct_minus_ra_dark.png" />
+    <None Remove="Assets\fct_minus_ra_light.png" />
+    <None Remove="Assets\fct_minus_ra_line_dark.png" />
+    <None Remove="Assets\fct_minus_ra_line_light.png" />
+    <None Remove="Assets\fct_minus_sn_dark.png" />
+    <None Remove="Assets\fct_minus_sn_light.png" />
+    <None Remove="Assets\fct_minus_sn_line_dark.png" />
+    <None Remove="Assets\fct_minus_sn_line_light.png" />
+    <None Remove="Assets\fct_plus_ra_dark.png" />
+    <None Remove="Assets\fct_plus_ra_light.png" />
+    <None Remove="Assets\fct_plus_ra_line_dark.png" />
+    <None Remove="Assets\fct_plus_ra_line_light.png" />
+    <None Remove="Assets\fct_plus_sn_dark.png" />
+    <None Remove="Assets\fct_plus_sn_light.png" />
+    <None Remove="Assets\fct_plus_sn_line_dark.png" />
+    <None Remove="Assets\fct_plus_sn_line_light.png" />
+    <None Remove="Assets\fct_ra_dark.png" />
+    <None Remove="Assets\fct_ra_light.png" />
+    <None Remove="Assets\fct_ra_line_dark.png" />
+    <None Remove="Assets\fct_ra_line_light.png" />
+    <None Remove="Assets\fct_ra_sn_dark.png" />
+    <None Remove="Assets\fct_ra_sn_light.png" />
+    <None Remove="Assets\fct_ra_sn_line_dark.png" />
+    <None Remove="Assets\fct_ra_sn_line_light.png" />
+    <None Remove="Assets\fct_sn_dark.png" />
+    <None Remove="Assets\fct_sn_dwn_dark.png" />
+    <None Remove="Assets\fct_sn_dwn_light.png" />
+    <None Remove="Assets\fct_sn_dwn_line_dark.png" />
+    <None Remove="Assets\fct_sn_dwn_line_light.png" />
+    <None Remove="Assets\fct_sn_light.png" />
+    <None Remove="Assets\fct_sn_line_dark.png" />
+    <None Remove="Assets\fct_sn_line_light.png" />
+    <None Remove="Assets\fct_sn_rs_dark.png" />
+    <None Remove="Assets\fct_sn_rs_light.png" />
+    <None Remove="Assets\fct_sn_rs_line_dark.png" />
+    <None Remove="Assets\fct_sn_rs_line_light.png" />
+    <None Remove="Assets\fct_ts_dark.png" />
+    <None Remove="Assets\fct_ts_light.png" />
+    <None Remove="Assets\fct_ts_line_dark.png" />
+    <None Remove="Assets\fct_ts_line_light.png" />
+    <None Remove="Assets\fct_ts_ra_dark.png" />
+    <None Remove="Assets\fct_ts_ra_light.png" />
+    <None Remove="Assets\fct_ts_ra_line_dark.png" />
+    <None Remove="Assets\fct_ts_ra_line_light.png" />
+    <None Remove="Assets\fg_d_dark.png" />
+    <None Remove="Assets\fg_d_light.png" />
+    <None Remove="Assets\fg_d_line_dark.png" />
+    <None Remove="Assets\fg_d_line_light.png" />
+    <None Remove="Assets\fg_n_dark.png" />
+    <None Remove="Assets\fg_n_light.png" />
+    <None Remove="Assets\fg_n_line_dark.png" />
+    <None Remove="Assets\fg_n_line_light.png" />
+    <None Remove="Assets\minus_bl_dark.png" />
+    <None Remove="Assets\minus_bl_light.png" />
+    <None Remove="Assets\minus_bl_line_dark.png" />
+    <None Remove="Assets\minus_bl_line_light.png" />
+    <None Remove="Assets\ovc_dark.png" />
+    <None Remove="Assets\ovc_ha_dark.png" />
+    <None Remove="Assets\ovc_ha_light.png" />
+    <None Remove="Assets\ovc_ha_line_dark.png" />
+    <None Remove="Assets\ovc_ha_line_light.png" />
+    <None Remove="Assets\ovc_light.png" />
+    <None Remove="Assets\ovc_line_dark.png" />
+    <None Remove="Assets\ovc_line_light.png" />
+    <None Remove="Assets\ovc_minus_ra_dark.png" />
+    <None Remove="Assets\ovc_minus_ra_light.png" />
+    <None Remove="Assets\ovc_minus_ra_line_dark.png" />
+    <None Remove="Assets\ovc_minus_ra_line_light.png" />
+    <None Remove="Assets\ovc_minus_sn_dark.png" />
+    <None Remove="Assets\ovc_minus_sn_light.png" />
+    <None Remove="Assets\ovc_minus_sn_line_dark.png" />
+    <None Remove="Assets\ovc_minus_sn_line_light.png" />
+    <None Remove="Assets\ovc_plus_ra_dark.png" />
+    <None Remove="Assets\ovc_plus_ra_light.png" />
+    <None Remove="Assets\ovc_plus_ra_line_dark.png" />
+    <None Remove="Assets\ovc_plus_ra_line_light.png" />
+    <None Remove="Assets\ovc_plus_sn_dark.png" />
+    <None Remove="Assets\ovc_plus_sn_light.png" />
+    <None Remove="Assets\ovc_plus_sn_line_dark.png" />
+    <None Remove="Assets\ovc_plus_sn_line_light.png" />
+    <None Remove="Assets\ovc_ra_dark.png" />
+    <None Remove="Assets\ovc_ra_ice_dark.png" />
+    <None Remove="Assets\ovc_ra_ice_light.png" />
+    <None Remove="Assets\ovc_ra_ice_line_dark.png" />
+    <None Remove="Assets\ovc_ra_ice_line_light.png" />
+    <None Remove="Assets\ovc_ra_light.png" />
+    <None Remove="Assets\ovc_ra_line_dark.png" />
+    <None Remove="Assets\ovc_ra_line_light.png" />
+    <None Remove="Assets\ovc_ra_sn_dark.png" />
+    <None Remove="Assets\ovc_ra_sn_light.png" />
+    <None Remove="Assets\ovc_ra_sn_line_dark.png" />
+    <None Remove="Assets\ovc_ra_sn_line_light.png" />
+    <None Remove="Assets\ovc_sn_dark.png" />
+    <None Remove="Assets\ovc_sn_light.png" />
+    <None Remove="Assets\ovc_sn_line_dark.png" />
+    <None Remove="Assets\ovc_sn_line_light.png" />
+    <None Remove="Assets\ovc_ts_dark.png" />
+    <None Remove="Assets\ovc_ts_ha_dark.png" />
+    <None Remove="Assets\ovc_ts_ha_light.png" />
+    <None Remove="Assets\ovc_ts_ha_line_dark.png" />
+    <None Remove="Assets\ovc_ts_ha_line_light.png" />
+    <None Remove="Assets\ovc_ts_light.png" />
+    <None Remove="Assets\ovc_ts_line_dark.png" />
+    <None Remove="Assets\ovc_ts_line_light.png" />
+    <None Remove="Assets\ovc_ts_ra_dark.png" />
+    <None Remove="Assets\ovc_ts_ra_light.png" />
+    <None Remove="Assets\ovc_ts_ra_line_dark.png" />
+    <None Remove="Assets\ovc_ts_ra_line_light.png" />
+    <None Remove="Assets\sad_sun.png" />
+    <None Remove="Assets\sad_sun_black.png" />
+    <None Remove="Assets\skc_d_dark.png" />
+    <None Remove="Assets\skc_d_light.png" />
+    <None Remove="Assets\skc_d_line_dark.png" />
+    <None Remove="Assets\skc_d_line_light.png" />
+    <None Remove="Assets\skc_n_dark.png" />
+    <None Remove="Assets\skc_n_light.png" />
+    <None Remove="Assets\skc_n_line_dark.png" />
+    <None Remove="Assets\skc_n_line_light.png" />
+    <None Remove="Assets\smog_dark.png" />
+    <None Remove="Assets\smog_light.png" />
+    <None Remove="Assets\smog_line_dark.png" />
+    <None Remove="Assets\smog_line_light.png" />
+    <None Remove="Assets\strm_dark.png" />
+    <None Remove="Assets\strm_light.png" />
+    <None Remove="Assets\strm_line_dark.png" />
+    <None Remove="Assets\strm_line_light.png" />
+    <None Remove="Assets\vlka_dark.png" />
+    <None Remove="Assets\vlka_light.png" />
+    <None Remove="Assets\vlka_line_dark.png" />
+    <None Remove="Assets\vlka_line_light.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Dark\bkn_+ra_d.png" />
+    <Content Include="Assets\Dark\bkn_+ra_n.png" />
+    <Content Include="Assets\Dark\bkn_+sn_d.png" />
+    <Content Include="Assets\Dark\bkn_+sn_n.png" />
+    <Content Include="Assets\Dark\bkn_-ra_d.png" />
+    <Content Include="Assets\Dark\bkn_-ra_n.png" />
+    <Content Include="Assets\Dark\bkn_-sn_d.png" />
+    <Content Include="Assets\Dark\bkn_-sn_n.png" />
+    <Content Include="Assets\Dark\bkn_d.png" />
+    <Content Include="Assets\Dark\bkn_n.png" />
+    <Content Include="Assets\Dark\bkn_ra_d.png" />
+    <Content Include="Assets\Dark\bkn_ra_n.png" />
+    <Content Include="Assets\Dark\bkn_sn_d.png" />
+    <Content Include="Assets\Dark\bkn_sn_n.png" />
+    <Content Include="Assets\Dark\bl-.png" />
+    <Content Include="Assets\Dark\bl.png" />
+    <Content Include="Assets\Dark\fct_+ra.png" />
+    <Content Include="Assets\Dark\fct_+sn.png" />
+    <Content Include="Assets\Dark\fct_-ra.png" />
+    <Content Include="Assets\Dark\fct_-sn.png" />
+    <Content Include="Assets\Dark\fct_ra.png" />
+    <Content Include="Assets\Dark\fct_ra_sn.png" />
+    <Content Include="Assets\Dark\fct_sn.png" />
+    <Content Include="Assets\Dark\fct_sn_dwn.png" />
+    <Content Include="Assets\Dark\fct_sn_rs.png" />
+    <Content Include="Assets\Dark\fct_ts.png" />
+    <Content Include="Assets\Dark\fct_ts_ra.png" />
+    <Content Include="Assets\Dark\fg_d.png" />
+    <Content Include="Assets\Dark\fg_n.png" />
+    <Content Include="Assets\Dark\ovc.png" />
+    <Content Include="Assets\Dark\ovc_+ra.png" />
+    <Content Include="Assets\Dark\ovc_+sn.png" />
+    <Content Include="Assets\Dark\ovc_-ra.png" />
+    <Content Include="Assets\Dark\ovc_-sn.png" />
+    <Content Include="Assets\Dark\ovc_gr.png" />
+    <Content Include="Assets\Dark\ovc_ra.png" />
+    <Content Include="Assets\Dark\ovc_ra_sn.png" />
+    <Content Include="Assets\Dark\ovc_sn.png" />
+    <Content Include="Assets\Dark\ovc_ts.png" />
+    <Content Include="Assets\Dark\ovc_ts_gr.png" />
+    <Content Include="Assets\Dark\ovc_ts_ra.png" />
+    <Content Include="Assets\Dark\skc_d.png" />
+    <Content Include="Assets\Dark\skc_n.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.2" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.2" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.2" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.2" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.2" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.2" />
+    <PackageReference Include="Iot.Device.Bindings" Version="3.0.0" />
+    <PackageReference Include="System.Text.Json" Version="7.0.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="Forecast.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
