@@ -267,7 +267,6 @@
     <PackageReference Include="Network.Bluetooth" Version="4.0.1803.22" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.IO.Ports" Version="4.6.0" />
-    <PackageReference Include="XamarinBluetoothLE" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

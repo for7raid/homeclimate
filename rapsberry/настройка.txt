@@ -1,0 +1,35 @@
+Pi 3 Model B a02082 
+
+Записать образ с помощью Rapsberry Pi Imager
+Опции можно не выбирать, все равно придется потом донастраивать
+
+Подключить мышь и клаву
+
+Подключить wifi
+Зайти Пуск - prefrencesc - Pi Configuration, Interfaces
+Включить ssh, vnc, spi, i2c, 1-wire, serial port, serial console не надо
+
+Настройка тача и повотра экрана
+https://littlebirdelectronics.com.au/guides/42/5-inch-touch-screen-display-with-raspberry-pi
+
+скоприровать драйвер тача
+pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\LCD-show-180817.tar.gz" pi@192.168.1.37:/tmp/LCD-show-180817.tar.gz
+
+sudo cp /tmp/LCD-show-180817.tar.gz /opt
+sudo tar xzvf /opt/LCD-show-180817.tar.gz
+cd /opt/LCD-show/
+sudo chmod +x LCD5-show
+./LCD5-show 90
+
+
+
+Настройка приложения
+
+cd /opt
+sudo mkdir meteo
+sudo chmod 777 meteo
+
+
+pscp -pw 123456 "C:\Users\for7r\Documents\Visual Studio 2017\Projects\homeclimate\rapsberry\bin\Release\netcoreapp3.0\publish\linux-arm64\*" pi@192.168.1.37:/opt/meteo/
+cd /opt/meteo/
+sudo chmod +x homeclimate
