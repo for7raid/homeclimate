@@ -31,14 +31,14 @@ namespace AvaloniaApplication.ViewModels
             timeTimer.Tick += TimeTimer_Tick;
             timeTimer.Start();
 
-            var forecastTimer = new DispatcherTimer() { Interval = TimeSpan.FromMinutes(30), IsEnabled = true };
-            forecastTimer.Tick += (s, e) => { UpdateForecast(); };
-            forecastTimer.Start();
+            //var forecastTimer = new DispatcherTimer() { Interval = TimeSpan.FromMinutes(30), IsEnabled = true };
+            //forecastTimer.Tick += (s, e) => { UpdateForecast(); };
+            //forecastTimer.Start();
 
             var homeTimer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(1), IsEnabled = true };
             homeTimer.Tick += (s, e) => { Home.UpdateHome(); };
 
-            UpdateForecast();
+            //UpdateForecast();
 #if RELEASE
             Home.UpdateHome();
 #endif
@@ -99,7 +99,7 @@ namespace AvaloniaApplication.ViewModels
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(DateTime.Now);
                 Console.WriteLine(e);
             }
         }
