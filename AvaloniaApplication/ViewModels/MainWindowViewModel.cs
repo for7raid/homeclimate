@@ -68,7 +68,7 @@ namespace AvaloniaApplication.ViewModels
 
                 Forecasts.Add(new ForecastPartViewModel
                 {
-                    Name = "Сейчас (" + DateTime.Now.ToString("HH:mm") + ")",
+                    Name = "Обновлено " + DateTime.Now.ToString("HH:mm dd.MM"),
                     Temp = forecast.fact.temp,
                     TempFeels = forecast.fact.feels_like,
                     WindDir = forecast.fact.wind_dir,
