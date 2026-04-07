@@ -265,7 +265,7 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.8.999" />
     <PackageReference Include="Iot.Device.Bindings" Version="1.0.0" />
     <PackageReference Include="Network.Bluetooth" Version="4.0.1803.22" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="System.IO.Ports" Version="4.6.0" />
   </ItemGroup>
 
